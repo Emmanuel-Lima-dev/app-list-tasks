@@ -14,6 +14,7 @@ const Tasks = () => {
       taskId === task.id ? { ...task, completed: !task.completed } : task
     );
     setTasks(updatedTasks);
+    localStorage.setItem('dataTasks', JSON.stringify(updatedTasks));
   };
 
   //funcion para almacenar nueva tarea

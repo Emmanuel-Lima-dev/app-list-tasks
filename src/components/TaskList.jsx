@@ -19,8 +19,8 @@ const TaskList = ({ tasks, onTaskCompleted, taskDelete }) => {
           id={task.id}
         />
         <div className='d-flex align-items-center'>
-          <button onClick={() =>  onTaskCompleted(task.id)} className='mx-2 fs-3 btn' ><i className="bi bi-check-lg text-success"></i></button>
-          <button onClick={() => deleteTask(task.id)} className='fs-5 btn'><i className="bi bi-trash3-fill text-danger"></i></button>
+          <button onClick={() =>  onTaskCompleted(task.id)} className=' mx-lg-2 fs-3 btn' ><i className="bi bi-check-lg text-success"></i></button>
+          <button onClick={() => deleteTask(task.id)} className='p-0 fs-5 btn'><i className="bi bi-trash3-fill text-danger"></i></button>
         </div>
             
       </li>
