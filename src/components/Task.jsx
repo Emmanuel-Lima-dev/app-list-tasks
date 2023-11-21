@@ -80,7 +80,7 @@ const Tasks = () => {
     <div>
       {
         viewAlert &&
-        (<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        (<div className="alert alert-warning alert-dismissible fade show my-0" role="alert">
         <strong>Holy!</strong> {viewAlert} con éxito...
         <button
           type="button"
