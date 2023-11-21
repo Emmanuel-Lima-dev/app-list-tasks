@@ -84,7 +84,7 @@ const Tasks = () => {
         <strong>Holy!</strong> {viewAlert} con éxito...
         <button
           type="button"
-          class="btn-close"
+          className="btn-close"
           
           onClick={() => setViewAlert(null)}
         ></button>
