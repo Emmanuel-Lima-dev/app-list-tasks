@@ -31,7 +31,7 @@ const TaskList = ({ tasks, onTaskCompleted, taskDelete }) => {
               <ModalDelete 
               deleteTask={deleteTask}
               taskId={task.id}
-            />
+              />
             </div>
             
           </li>
