@@ -18,13 +18,6 @@ function ModalDelete({ deleteTask, taskId }) {
 
   return (
     <>
-      {/* <Button
-        variant="outline-secondary border-0"
-        className="btn outline-danger"
-        onClick={handleShow}
-      >
-        <i className="bi bi-trash3-fill text-danger"></i>
-      </Button> */}
       <button onClick={handleShow} className="p-0 fs-5 btn">
         <i className="bi bi-trash3-fill text-danger"></i>
       </button>

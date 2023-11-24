@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import Title from "./Title";
+import AlertAction from "./AlertAction";
 
 const Tasks = () => {
+
   //estado para almacenar las tareas
   const [tasks, setTasks] = useState([]);
+  //estado para almacenar id ficticio
   const [idGenerator, setIdGenerator] = useState(
     parseInt(localStorage.getItem("mockId")) || 1
   );
+  //estado para almacenar acciones(agregar, eliminar, editar)
   const [action, setAction] = useState(null);
   const [viewAlert, setViewAlert] = useState(null)
 
@@ -47,12 +51,15 @@ const Tasks = () => {
     setAction("delete");
   };
 
-  // const firstRender = useRef(true);
+  //funcion para setear valor de action al componente alertAction
+  const handleSetViewAlert = () => setViewAlert(null)
 
+  //useEffect para recuperar contador id del localStorage
   useEffect(() => {
     localStorage.setItem("mockId", idGenerator);
   }, [idGenerator]);
 
+  //useEffect para setear acción
   useEffect(() => {
     switch (action) {
       case "add":
@@ -71,6 +78,7 @@ const Tasks = () => {
     setAction(null);
   }, [tasks, action]);
 
+  //useEffect para recuperar lista de tareas almacenadas
   useEffect(() => {
     const StoredTasks = JSON.parse(localStorage.getItem("dataTasks")) || [];
     setTasks(StoredTasks);
@@ -78,22 +86,17 @@ const Tasks = () => {
 
   return (
     <div>
-      {
-        viewAlert &&
-        (<div className="alert alert-warning alert-dismissible fade show my-0" role="alert">
-        <strong>Holy!</strong> {viewAlert} con éxito...
-        <button
-          type="button"
-          className="btn-close"
-          
-          onClick={() => setViewAlert(null)}
-        ></button>
-      </div>)
-      }
+      {viewAlert && (
+        <AlertAction
+        handleViewAlert = {viewAlert}
+        handleStateAlert = {handleSetViewAlert}
+      />
+      )}
       
       <Title title="Gestor de tareas" />
+
       <span className="text-white">Tareas completadas: {tasks.filter((t)=>t.completed).length}</span><br/>
-      <span className="text-white">Tareas por completar: {tasks.filter((t)=>!t.completed).length}</span>
+      <span className="text-white">Tareas por pendientes: {tasks.filter((t)=>!t.completed).length}</span>
       
       <TaskForm setNewTask={handleTaskAdd} />
 

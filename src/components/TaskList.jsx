@@ -27,13 +27,7 @@ const TaskList = ({ tasks, onTaskCompleted, taskDelete }) => {
                 className=" mx-lg-2 fs-3 btn"
               >
                 <i className="bi bi-check-lg text-success"></i>
-              </button>
-              {/* <button
-                onClick={() => deleteTask(task.id)}
-                className="p-0 fs-5 btn"
-              >
-                <i className="bi bi-trash3-fill text-danger"></i>
-              </button> */}
+              </button>      
               <ModalDelete 
               deleteTask={deleteTask}
               taskId={task.id}
