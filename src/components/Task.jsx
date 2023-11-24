@@ -92,6 +92,9 @@ const Tasks = () => {
       }
       
       <Title title="Gestor de tareas" />
+      <span className="text-white">Tareas completadas: {tasks.filter((t)=>t.completed).length}</span><br/>
+      <span className="text-white">Tareas por completar: {tasks.filter((t)=>!t.completed).length}</span>
+      
       <TaskForm setNewTask={handleTaskAdd} />
 
       <TaskList

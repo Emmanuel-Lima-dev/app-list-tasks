@@ -15,6 +15,7 @@ const TaskForm = ({setNewTask}) => {
   }
 
   return (
+
     <form className='form-floating d-flex mb-3'>
         <input type='text' value={task} onChange={handleInputChange} className='form-control' id="floatingInputGroup1" placeholder="Nueva tarea"/>
         <label htmlFor="floatingInputGroup1">Ingrese nueva tarea</label>
