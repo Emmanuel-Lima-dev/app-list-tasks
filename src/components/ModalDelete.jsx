@@ -26,7 +26,7 @@ function ModalDelete({ deleteTask, taskId }) {
         <Modal.Header closeButton>
           <Modal.Title>Eliminar</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Estas seguro que quieres eliminar esta tarea?</Modal.Body>
+        <Modal.Body>¿Estas seguro que quieres eliminar esta tarea?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancelar
