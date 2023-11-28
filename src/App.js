@@ -1,12 +1,12 @@
 import './App.css';
-import Tasks from './components/Task';
+import TaskApp from './components/TaskApp';
 // import TaskItem from './components/TaskItem';
 // import TaskList from './components/TaskList';
 
 function App() {
   return (
     <div className="App">
-      <Tasks />
+      <TaskApp />
     </div>
   );
 }

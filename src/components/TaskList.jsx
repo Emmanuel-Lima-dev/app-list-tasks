@@ -4,6 +4,7 @@ import "animate.css";
 import ModalDelete from "./ModalDelete";
 
 const TaskList = ({ tasks, onTaskCompleted, taskDelete }) => {
+  
   const deleteTask = (id) => {
     taskDelete(id);
   };
@@ -12,6 +13,7 @@ const TaskList = ({ tasks, onTaskCompleted, taskDelete }) => {
     <>
       <ol className="p-0 bg-secondary-subtle rounded">
         {tasks.map((task) => (
+          
           <li
             key={task.id}
             className="d-flex justify-content-between align-items-center px-3 py-1 animate__animated animate__headShake"
@@ -26,7 +28,7 @@ const TaskList = ({ tasks, onTaskCompleted, taskDelete }) => {
                 onClick={() => onTaskCompleted(task.id)}
                 className=" mx-lg-2 fs-3 btn"
               >
-                <i className="bi bi-check-lg text-success"></i>
+              <i className="bi bi-check-lg text-success"></i>
               </button>      
               <ModalDelete 
               deleteTask={deleteTask}

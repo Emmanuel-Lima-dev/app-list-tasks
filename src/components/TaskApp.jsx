@@ -4,7 +4,7 @@ import TaskList from "./TaskList";
 import Title from "./Title";
 import AlertAction from "./AlertAction";
 
-const Tasks = () => {
+const TaskApp = () => {
 
   //estado para almacenar las tareas
   const [tasks, setTasks] = useState([]);
@@ -14,6 +14,7 @@ const Tasks = () => {
   );
   //estado para almacenar acciones(agregar, eliminar, editar)
   const [action, setAction] = useState(null);
+  //estado para almacenar la visibilidad del alerta
   const [viewAlert, setViewAlert] = useState(null)
 
   // funcion para modificar estado completado de tarea
@@ -90,16 +91,17 @@ const Tasks = () => {
         <AlertAction
         handleViewAlert = {viewAlert}
         handleStateAlert = {handleSetViewAlert}
-      />
+        />
       )}
       
       <Title title="Gestor de tareas" />
 
       <span className="text-white">Tareas completadas: {tasks.filter((t)=>t.completed).length}</span><br/>
+
       <span className="text-white">Tareas pendientes: {tasks.filter((t)=>!t.completed).length}</span>
       
       <TaskForm setNewTask={handleTaskAdd} />
-
+     
       <TaskList
         tasks={tasks}
         onTaskCompleted={handleTaskCompleted}
@@ -109,4 +111,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default TaskApp;
